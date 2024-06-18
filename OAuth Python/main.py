@@ -1,8 +1,20 @@
+from requests_oauthlib import OAuth2Session
+from flask import Flask, request, redirect, session
+from flask.json import jsonify
 import os
-import requests
-from flask import Flask, redirect, request, session, url_for, jsonify
+
 
 class OAuthPY:
+
+    def __init__(self):
+        client_key = ''
+        client_secret = ''
+        oauth_base_url = 'https://github.com/login/oauth/authorize'
+        token_url = 'https://github.com/login/oauth/access_token'
+        secret_key = os.urandom(24)
+
+        app = Flask(__name__)
+        app.config['SECRET_KEY'] = secret_key
 
     def main(self):
         print("hello world")
