@@ -19,6 +19,9 @@ class OAuthPY:
     def main(self):
         print("hello world")
 
+        # This allows us to use a plain HTTP callback
+        os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = "1"
+
 
 if __name__ == '__main__':
     oa = OAuthPY()
